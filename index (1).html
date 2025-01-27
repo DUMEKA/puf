@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Site</title>
+
+    <!-- CSS Bağlantıları -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <style>
+        /* Genel Ayarlar */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif; /* İlk attığın font */
+            background-color: #070505;
+            color: white;
+        }
+
+        /* Hero Area Arka Plan */
+        .hero-area-bg {
+            background-image: url('https://images3.alphacoders.com/789/789408.png');
+            background-size: cover;
+            background-position: center center; /* Default */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Mobilde Arka Planı Sağa Kaydır */
+        @media (max-width: 768px) {
+            .hero-area-bg {
+                background-position: right center; /* Sağa kaydır */
+            }
+        }
+
+        .hero-area-bg .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-area-bg .contents {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ben-eka {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Navbar Ayarları */
+.navbar {
+    background-color: #070505; /* Siyah arka plan */
+    padding: 10px 20px; /* Navbar iç boşlukları */
+}
+
+/* Navbar Brand Ayarları */
+.navbar-brand {
+    display: flex; /* Resim ve yazıyı yan yana hizala */
+    align-items: center; /* Dikeyde ortala */
+}
+
+/* Navbar Resim Ayarları */
+.navbar-brand img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Resmi yuvarlak hale getir */
+    object-fit: cover; /* Resmi düzgün bir şekilde çerçeveye sığdır */
+    transform: translateY(10px); /* Resmi çerçevenin içinde aşağı kaydır */
+    margin-right: 15px; /* Resim ile yazı arasında boşluk bırak */
+}
+
+/* Navbar Yazı Alanı Ayarları */
+.navbar-brand .text-wrapper {
+    display: flex;
+    flex-direction: column; /* Yazıları üst üste hizala */
+    margin-left: 5px; /* Resim ile yazı arasındaki boşluk */
+}
+
+.navbar-brand .text-wrapper span {
+    color: white; /* Yazı rengi */
+    font-size: 20px; /* Yazı boyutu */
+    font-weight: bold; /* Yazıyı daha vurgulu hale getir */
+}
+
+.navbar-brand .text-wrapper .dum-eka {
+    font-size: 16px; /* İkinci yazı için boyut */
+    margin-top: 5px; /* Birinci yazı ile arasındaki boşluk */
+    color: #9b59b6; /* Öne çıkarmak için farklı renk */
+}
+
+/* Navbar Menü Linkleri */
+.navbar-nav .nav-link {
+    color: #9b59b6 !important; /* Menü yazı rengi */
+    font-size: 16px; /* Menü yazı boyutu */
+    text-transform: uppercase; /* Büyük harf yazımı */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #8e44ad !important; /* Menü üzerindeyken renk değişimi */
+}
+
+
+
+        /* Mobil Düzen */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 60px;
+                height: 60px;
+                transform: translateY(5px); /* Mobilde resmi biraz daha az kaydır */
+            }
+
+            .navbar-brand .text-wrapper span {
+                font-size: 18px;
+            }
+
+            .navbar-brand .text-wrapper dum-eka {
+                font-size: 14px;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 14px;
+            }
+
+            .hero-area-bg h2 {
+                font-size: 2em;
+            }
+
+            .hero-area-bg p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Bölümü -->
+<header id="header-wrap">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            
+            <!-- Logo ve Yazılar -->
+            <a href="index.html" class="navbar-brand">
+                <!-- İkon -->
+                <img src="assets/img/pfp.png" alt="Logo">
+                <!-- DİSCORD ve dum_eka yazıları -->
+                <div class="text-wrapper">
+                    <span>DİSCORD</span>
+                    <div class="dum-eka">dum_eka</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#hero-area">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Alanı -->
+<div id="hero-area" class="hero-area-bg">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="contents">
+                    <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Merhaba</h5>
+                    <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Siyah</h2>
+                    <p class="script-font wow fadeInUp" data-wow-delay="0.6s">İnsan</p>
+                    <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
+                        <li>
+                            <a class="instagram" href="https://www.instagram.com/eka_geliyor/" target="_blank">
+                                <i class="icon-social-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="script-font wow fadeInUp ben-eka" data-wow-delay="1s">BEN EKA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Dosyaları -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script>
+    // WOW.js aktivasyonu
+    new WOW().init();
+</script>
+
+</body>
+</html>
